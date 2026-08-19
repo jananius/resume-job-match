@@ -49,22 +49,3 @@ Generate Recommendations
 Store Analysis in MySQL
       ↓
 View Analysis History
-
-
-## 📸 Screenshots
-
-### Home Page
-
-![ResumeIQ Home](screenshots/landing page.png)
-
-### Resume Analysis Result
-
-![Analysis Result](screenshots/result analysis.png)
-
-### Candidate Profile
-
-![Candidate Profile](screenshots/profile.png)
-
-### Analysis History
-
-![Analysis History](history.png)

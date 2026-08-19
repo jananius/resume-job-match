@@ -50,3 +50,21 @@ Generate Career Recommendations
 Store Analysis in MySQL
       ↓
 View Analysis History
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![ResumeIQ Home](screenshots/landing%20page.png)
+
+### 📊 Resume Analysis Result
+
+![Analysis Result](screenshots/result%20analysis.png)
+
+### 👤 Candidate Profile
+
+![Candidate Profile](screenshots/profile.png)
+
+### 📜 Analysis History
+
+![Analysis History](screenshots/history.png)

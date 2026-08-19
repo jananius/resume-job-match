@@ -50,6 +50,7 @@ Generate Career Recommendations
 Store Analysis in MySQL
       ↓
 View Analysis History
+```
 
 ## 📸 Screenshots
 

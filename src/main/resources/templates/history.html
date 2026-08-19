@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ResumeIQ | Analysis History</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+            background: #f7f9fc;
+            color: #1f2937;
+        }
+
+
+        nav {
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: white;
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+
+        .logo {
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: #2563eb;
+        }
+
+
+        .container {
+            max-width: 1000px;
+
+            margin: 50px auto;
+
+            padding: 20px;
+        }
+
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+
+        .header h1 {
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .header p {
+            color: #6b7280;
+        }
+
+
+        .history-card {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 16px;
+
+            padding: 25px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 15px;
+        }
+
+
+        .candidate {
+            font-size: 19px;
+
+            font-weight: bold;
+        }
+
+
+        .score {
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #2563eb;
+        }
+
+
+        .job {
+            color: #4b5563;
+
+            margin-bottom: 10px;
+        }
+
+
+        .date {
+            color: #9ca3af;
+
+            font-size: 13px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .skills {
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .skill {
+            padding: 7px 12px;
+
+            border-radius: 15px;
+
+            font-size: 12px;
+        }
+
+
+        .matched {
+            background: #dcfce7;
+
+            color: #15803d;
+        }
+
+
+        .missing {
+            background: #fee2e2;
+
+            color: #b91c1c;
+        }
+
+
+        .empty {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            padding: 50px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            color: #6b7280;
+        }
+
+
+        .back {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 13px 22px;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+        }
+
+
+        footer {
+            margin-top: 50px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background: #111827;
+
+            color: #9ca3af;
+
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .top {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav>
+
+        <div class="logo">
+            ResumeIQ
+        </div>
+
+    </nav>
+
+
+    <div class="container">
+
+
+        <div class="header">
+
+            <h1>
+                Analysis History
+            </h1>
+
+            <p>
+                View your previous resume analysis results.
+            </p>
+
+        </div>
+
+
+        <div
+            th:if="${analyses.isEmpty()}"
+            class="empty">
+
+            <h2>
+                No Analysis History
+            </h2>
+
+            <p>
+                Analyze a resume to create your first history record.
+            </p>
+
+        </div>
+
+
+        <div
+            th:each="analysis : ${analyses}"
+            class="history-card">
+
+
+            <div class="top">
+
+                <div class="candidate"
+                     th:text="${analysis.candidateName}">
+
+                    Candidate
+
+                </div>
+
+
+                <div class="score"
+                     th:text="${analysis.matchScore + '%'}">
+
+                    0%
+
+                </div>
+
+            </div>
+
+
+            <div class="job">
+
+                <strong>
+                    Target Job:
+                </strong>
+
+                <span
+                    th:text="${analysis.jobTitle}">
+
+                    Job
+
+                </span>
+
+            </div>
+
+
+            <div class="date">
+
+                <span>
+                    Analyzed:
+                </span>
+
+                <span
+                    th:text="${analysis.analyzedAt}">
+
+                    Date
+
+                </span>
+
+            </div>
+
+
+            <div class="skills">
+
+                <span
+                    class="skill matched"
+                    th:each="skill : ${#strings.arraySplit(analysis.matchedSkills, ', ')}"
+                    th:text="${skill}">
+                </span>
+
+
+                <span
+                    class="skill missing"
+                    th:each="skill : ${#strings.arraySplit(analysis.missingSkills, ', ')}"
+                    th:text="${skill}">
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <a
+            href="/"
+            class="back">
+
+            Analyze New Resume
+
+        </a>
+
+
+    </div>
+
+
+    <footer>
+
+        ResumeIQ © 2026
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ResumeIQ | Analysis</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Inter, Arial, sans-serif;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        nav {
+            height: 72px;
+            padding: 0 7%;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 20px;
+        }
+
+        .heading {
+            margin-bottom: 30px;
+        }
+
+        .heading small {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .heading h1 {
+            font-size: 38px;
+            margin: 8px 0;
+        }
+
+        .heading p {
+            color: #64748b;
+        }
+
+        .score-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+        }
+
+        .score-info h2 {
+            margin-bottom: 8px;
+        }
+
+        .score-info p {
+            color: #64748b;
+        }
+
+        .score {
+            font-size: 58px;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        .profile,
+        .card,
+        .recommendations {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 25px;
+        }
+
+        .profile h2,
+        .card h2,
+        .recommendations h2 {
+            margin-bottom: 22px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .profile-item {
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .profile-item small {
+            display: block;
+            color: #64748b;
+            margin-bottom: 5px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .profile-item strong {
+            word-break: break-word;
+        }
+
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 9px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .matched {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .missing {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .recommendations li {
+            list-style: none;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8fafc;
+            border-radius: 10px;
+            color: #475569;
+        }
+
+        .recommendations li::before {
+            content: "💡 ";
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary {
+            background: white;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media(max-width: 700px) {
+
+            .score-card,
+            .two-column {
+                grid-template-columns: 1fr;
+                display: grid;
+                gap: 20px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .score {
+                font-size: 45px;
+            }
+
+            .heading h1 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<nav>
+
+    <div class="logo">
+        ResumeIQ
+    </div>
+
+    <a href="/history">
+        Analysis History →
+    </a>
+
+</nav>
+
+
+<div class="container">
+
+
+    <div class="heading">
+
+        <small>✓ ANALYSIS COMPLETED</small>
+
+        <h1>
+            Resume Match Report
+        </h1>
+
+        <p>
+            Here's how your resume aligns with the target job.
+        </p>
+
+    </div>
+
+
+    <div class="score-card">
+
+        <div class="score-info">
+
+            <h2>
+                Overall Job Match
+            </h2>
+
+            <p>
+                Based on the skills detected in your resume
+                and the target job description.
+            </p>
+
+        </div>
+
+        <div class="score"
+             th:text="${score + '%'}">
+            0%
+        </div>
+
+    </div>
+
+
+    <div class="profile">
+
+        <h2>
+            👤 Candidate Profile
+        </h2>
+
+        <div class="profile-grid">
+
+            <div class="profile-item">
+
+                <small>NAME</small>
+
+                <strong th:text="${name}">
+                    Not detected
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <small>EMAIL</small>
+
+                <strong th:text="${email}">
+                    Not detected
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <small>PHONE</small>
+
+                <strong th:text="${phone}">
+                    Not detected
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <small>DEGREE</small>
+
+                <strong th:text="${degree}">
+                    Not detected
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <small>CGPA</small>
+
+                <strong th:text="${cgpa}">
+                    Not detected
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <small>LINKEDIN</small>
+
+                <strong th:text="${linkedin}">
+                    Not detected
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <small>GITHUB</small>
+
+                <strong th:text="${github}">
+                    Not detected
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="two-column">
+
+
+        <div class="card">
+
+            <h2>
+                ✓ Matched Skills
+            </h2>
+
+            <div class="skill-grid">
+
+                <span
+                    class="skill matched"
+                    th:each="skill : ${matchedSkills}"
+                    th:text="${skill}">
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                ⚠ Skill Gaps
+            </h2>
+
+            <div class="skill-grid">
+
+                <span
+                    class="skill missing"
+                    th:each="skill : ${missingSkills}"
+                    th:text="${skill}">
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="recommendations">
+
+        <h2>
+            💡 Recommended Next Steps
+        </h2>
+
+        <ul>
+
+            <li
+                th:each="recommendation : ${recommendations}"
+                th:text="${recommendation}">
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="actions">
+
+        <a
+            href="/"
+            class="btn primary">
+
+            Analyze Another Resume
+
+        </a>
+
+
+        <a
+            href="/history"
+            class="btn secondary">
+
+            View History
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<footer>
+    ResumeIQ © 2026 · AI-Powered Resume & Job Matching
+</footer>
+
+
+</body>
+
+</html>

@@ -1,10 +1,10 @@
 # ResumeIQ
 
-### AI-Powered Resume & Job Matching Platform
+## AI-Powered Resume & Job Matching Platform
 
-ResumeIQ is a web-based application that analyzes a candidate's resume against a target job description and provides a job compatibility report.
+ResumeIQ is a web-based application that analyzes a candidate's resume against a target job description and provides an intelligent job compatibility report.
 
-It extracts important resume information, identifies skills, compares them with job requirements, calculates a match score, detects missing skills, and provides career recommendations.
+The application extracts resume information, identifies technical skills, compares them with job requirements, calculates a job match score, detects missing skills, and provides career recommendations.
 
 ---
 
@@ -12,9 +12,10 @@ It extracts important resume information, identifies skills, compares them with 
 
 - Resume PDF Upload
 - PDF Text Extraction
-- Resume Skill Extraction
+- Resume Details Extraction
 - Candidate Information Extraction
-- Job Description Analysis
+- Job Description Input
+- Technical Skill Extraction
 - Resume-to-Job Skill Matching
 - Job Match Score
 - Matched Skills Detection
@@ -23,7 +24,7 @@ It extracts important resume information, identifies skills, compares them with 
 - Candidate Profile Analysis
 - MySQL Database Integration
 - Analysis History
-- Responsive Professional UI
+- Professional Responsive UI
 
 ---
 
@@ -44,7 +45,7 @@ Calculate Match Score
       ↓
 Identify Matched & Missing Skills
       ↓
-Generate Recommendations
+Generate Career Recommendations
       ↓
 Store Analysis in MySQL
       ↓
